@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Bank - Home</title>
+    
+    <!-- Google Font (Closest to Averta) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- FontAwesome Icons -->
+
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-radius: 0 0 20px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .nav-links a {
+            color: #8f2d3a;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 15px;
+            transition: all 0.3s ease-in-out;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links a.home-btn {
+            background-color: #8f2d3a;
+            color: white;
+            border-radius: 30px;
+            padding: 10px 20px;
+        }
+
+        .nav-links a i {
+            color: white;
+            font-size: 18px;
+        }
+
+        .nav-links a:hover {
+            background-color: #8f2d3a;
+            color: white;
+            border-radius: 30px;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #8f2d3a;
+            transition: 0.3s ease-in-out;
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                border-radius: 0 0 20px 20px;
+                padding: 10px 0;
+            }
+
+            .nav-links a {
+                display: block;
+                text-align: center;
+                padding: 15px;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        .hero {
+            background: url('bank-bg.jpg') no-repeat center center/cover;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            font-weight: 400;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideUp 1s ease-in-out forwards;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .button {
+            background-color: #8f2d3a;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: 600;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .button:hover {
+            background-color: #6c1e2c;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">
+        <a href="https://www.hsbc.com/careers#online-banking"><img src="logo.png" alt="Bank Logo"></a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <nav class="nav-links">
+        <a href="index.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+        <a href="savings_account.html"><i class="fas fa-university"></i> Accounts</a>
+        <a href="personal_loan.html"><i class="fas fa-hand-holding-usd"></i> Loans</a>
+        <a href="fixed_deposit.html"><i class="fas fa-piggy-bank"></i> Deposits</a>
+        <a href="mutual_funds.html"><i class="fas fa-chart-line"></i> Investments</a>
+        <a href="contact.html"><i class="fas fa-phone-alt"></i> Contact</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <h2>Welcome to Your Bank</h2>
+    <p>Building a world-class bank in India with ethics, technology, and social impact.</p>
+    <a href="https://www.hsbc.com/careers#online-banking" target="_blank" class="button">Visit Your Bank</a>
+</div>
+
+<div class="cards">
+    <div class="card">
+        <h3>Savings Account</h3>
+        <p>ZERO charges on RTGS and NEFT transactions</p>
+        <a href="savings_account.html" class="button">Know More</a>
+    </div>
+    <div class="card">
+        <h3>Personal Loan</h3>
+        <p>Get instant loans up to ₹10 Lakhs in 30 minutes</p>
+        <a href="personal_loan.html" class="button">Know More</a>
+    </div>
+    <div class="card">
+        <h3>Fixed Deposits</h3>
+        <p>Earn up to 7.90% p.a.</p>
+        <a href="fixed_deposit.html" class="button">Know More</a>
+    </div>
+    <div class="card">
+        <h3>Mutual Funds</h3>
+        <p>Invest in top funds curated by our experts</p>
+        <a href="mutual_funds.html" class="button">Know More</a>
+    </div>
+</div>
+
+<script>
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.style.display = (navLinks.style.display === 'flex') ? 'none' : 'flex';
+    }
+</script>
+
+</body>
+</html>
+

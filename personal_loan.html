@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Bank - Personal Loan</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('bank-bg.jpg') no-repeat center center/cover;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-radius: 0 0 20px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            animation: slideDown 0.5s ease-in-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: 0.3s ease-in-out;
+        }
+
+        .nav-links a {
+            color: #8f2d3a;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            transition: 0.3s;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links a.active, .nav-links a:hover {
+            background-color: #8f2d3a;
+            color: white;
+            border-radius: 30px;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            color: #8f2d3a;
+            transition: 0.3s ease-in-out;
+        }
+
+        .hamburger:hover {
+            transform: scale(1.1);
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                padding: 10px 0;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                transition: 0.5s ease-in-out;
+            }
+
+            .nav-links a {
+                padding: 15px;
+                display: block;
+                text-align: center;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }
+
+        .container {
+            width: 80%;
+            margin: 40px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        h2 {
+            text-align: center;
+            color: #8f2d3a;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .feature-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 280px;
+            text-align: center;
+            transition: 0.3s ease-in-out;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .feature-box i {
+            font-size: 40px;
+            color: #8f2d3a;
+            margin-bottom: 10px;
+        }
+
+        .button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 12px;
+            background-color: #8f2d3a;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .button:hover {
+            background-color: #721b29;
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar">
+    <div class="logo">
+        <img src="logo.png" alt="Bank Logo">
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <nav class="nav-links">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="savings_account.html"><i class="fas fa-university"></i> Accounts</a>
+        <a href="personal_loan.html" class="active"><i class="fas fa-hand-holding-usd"></i> Loans</a>
+        <a href="fixed_deposit.html"><i class="fas fa-piggy-bank"></i> Deposits</a>
+        <a href="mutual_funds.html"><i class="fas fa-chart-line"></i> Investments</a>
+        <a href="contact.html"><i class="fas fa-phone-alt"></i> Contact</a>
+    </nav>
+</header>
+
+<!-- Content -->
+<div class="container">
+    <h2>Personal Loan</h2>
+    <p>Instant loans up to ₹10 Lakhs with easy approvals and minimal documentation.</p>
+
+    <div class="features">
+        <div class="feature-box">
+            <i class="fas fa-bolt"></i>
+            <h3>Instant Approval</h3>
+            <p>Get your loan approved in minutes</p>
+        </div>
+        <div class="feature-box">
+            <i class="fas fa-rupee-sign"></i>
+            <h3>Up to ₹10 Lakhs</h3>
+            <p>Flexible loan amounts as per your needs</p>
+        </div>
+        <div class="feature-box">
+            <i class="fas fa-percentage"></i>
+            <h3>Low Interest Rates</h3>
+            <p>Starting from just 10.99% p.a.</p>
+        </div>
+        <div class="feature-box">
+            <i class="fas fa-file-alt"></i>
+            <h3>Minimal Documentation</h3>
+            <p>Quick & hassle-free processing</p>
+        </div>
+    </div>
+
+    <a href="https://www.hsbc.com/careers#online-banking" target="_blank" class="button">Apply Now</a>
+</div>
+
+<script>
+    function toggleMenu() {
+        var menu = document.querySelector('.nav-links');
+        menu.classList.toggle('show');
+    }
+</script>
+
+</body>
+</html>
+
